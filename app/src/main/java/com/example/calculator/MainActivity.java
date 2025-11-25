@@ -13,7 +13,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button buttonAdd, buttonSubtract, buttonDivade, buttonMultiply,buttonDegree, buttonClean;
+    private Button buttonAdd, buttonSubtract, buttonDivade, buttonMultiply, buttonDegree, buttonClean;
     private TextView operation,result;
     private EditText number1,number2;
 
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonSubtract = (Button) findViewById(R.id.buttonSubtract);
         buttonDivade = (Button) findViewById(R.id.buttonDivade);
         buttonMultiply =(Button) findViewById(R.id.buttonMultiply);
-
+        buttonDegree =(Button) findViewById(R.id.buttonDegree);
         buttonClean = (Button) findViewById(R.id.buttonClean);
         operation= (TextView) findViewById(R.id.operation);
         result= (TextView) findViewById(R.id.result);
@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonMultiply.setOnClickListener(this);
         buttonDegree.setOnClickListener(this);
         buttonClean.setOnClickListener(this);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -69,8 +70,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             res = num1 / num2;
         } else if (id == R.id.buttonMultiply){
             operation.setText("*");
+            res = num1 * num2;
+        } else if (id == R.id. buttonDegree) {
+            operation.setText("^");
 
-        } else if (id == R.id.buttonClean) {
             number1.setText("");
             operation.setText("");
             number2.setText("");
