@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="#DB72A1"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="391dp"
-        android:layout_height="41dp"
+        android:layout_width="352dp"
+        android:layout_height="39dp"
         android:layout_marginTop="16dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,8 @@
             android:background="#FFFFFF"
             android:inputType="numberSigned"
             android:textColor="@android:color/background_dark"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <TextView
             android:id="@+id/operation"
@@ -70,14 +71,14 @@
 
     <androidx.gridlayout.widget.GridLayout
         android:id="@+id/gridLayout"
-        android:layout_width="411dp"
-        android:layout_height="655dp"
+        android:layout_width="336dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="#DA71A0"
         app:columnCount="3"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <Button
             android:id="@+id/buttonAdd"
@@ -86,7 +87,9 @@
             android:backgroundTint="#AD1457"
             android:text="+"
             android:textSize="30sp"
+            app:layout_column="0"
             app:layout_gravity="fill_vertical"
+            app:layout_row="0"
             app:layout_rowSpan="2" />
 
         <Button
@@ -138,5 +141,15 @@
             app:layout_gravity="fill_horizontal" />
 
     </androidx.gridlayout.widget.GridLayout>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="Click"
+        android:text="О разработчике"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

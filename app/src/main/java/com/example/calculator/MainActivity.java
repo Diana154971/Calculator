@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.content.Intent;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -71,9 +72,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (id == R.id.buttonMultiply){
             operation.setText("*");
             res = num1 * num2;
-        } else if (id == R.id. buttonDegree) {
+        } else if (id == R.id.buttonDegree){
             operation.setText("^");
-
+            res = (float) Math.pow(num1, num2);
+        } else if (id == R.id.buttonClean) {
             number1.setText("");
             operation.setText("");
             number2.setText("");
@@ -82,5 +84,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         result.setText(String.valueOf(res));
+
     }
+    public void Click(View view) {
+        Intent intent = new Intent(MainActivity.this, MainActivity3.class);
+        startActivity(intent);
+        finish();
+    }
+
 }
